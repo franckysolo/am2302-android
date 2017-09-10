@@ -30,7 +30,6 @@ public class DeviceListAdapter extends BaseAdapter {
         mInflater = mainActivity.getLayoutInflater();
     }
 
-
     public void clear() {
         mDeviceList.clear();
     }
@@ -45,7 +44,6 @@ public class DeviceListAdapter extends BaseAdapter {
     public BluetoothDevice getDevice(int position) {
         return mDeviceList.get(position);
     }
-
 
     @Override
     public int getCount() {
