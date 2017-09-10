@@ -32,7 +32,7 @@ public class DeviceListListener implements AdapterView.OnItemClickListener  {
             mContext.onScanning = false;
             // On coupe le scan
         }
-        // Et on se connecte au tracker
+        // Et on se connecte au module
         mContext.runOnUiThread(new Runnable() {
             @Override
             public void run() {

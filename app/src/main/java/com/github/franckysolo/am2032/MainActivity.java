@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     private ListView mDeviceListView;
     public TextView deviceSignal;
 
-
     public TextView tv_temperature;
     public TextView tv_humidity;
 
@@ -58,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
     public ScanSettings mSettings;
     public List<ScanFilter> mFilters;
     public boolean onScanning = false;
-    public MenuItem mProgressItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             mSettings = new ScanSettings.Builder()
                     .setScanMode(ScanSettings.SCAN_MODE_LOW_LATENCY)
                     .build();
-            mFilters = new ArrayList<ScanFilter>();
+            mFilters = new ArrayList<>();
             scanDevices(false);
         }
         super.onResume();
@@ -93,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
             scanDevices(false);
         }
     }
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
@@ -136,7 +133,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void scanDevices(final boolean enable) {
-        // ActionBar ab = getSupportActionBar();
         if (enable) {
             mHandler.postDelayed(new Runnable() {
                 @Override
@@ -210,7 +206,6 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
 
-        //  On lit les caractéristiques du tracker
         gatt.setCharacteristicNotification(characteristic, true);
         gatt.readCharacteristic(characteristic);
         BluetoothGattDescriptor descriptor = characteristic.getDescriptor(SERVICE_UUID);
@@ -308,17 +303,4 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
-
-//    @Override
-//    public boolean onPrepareOptionsMenu(Menu menu) {
-//        getMenuInflater().inflate(R.menu.main, menu);
-//        if (!onScanning) {
-//            menu.findItem(R.id.menu_stop).setVisible(false);
-//            menu.findItem(R.id.menu_scan).setVisible(true);
-//        } else {
-//            menu.findItem(R.id.menu_stop).setVisible(true);
-//            menu.findItem(R.id.menu_scan).setVisible(false);
-//        }
-//        return super.onPrepareOptionsMenu(menu);
-//    }
 }
