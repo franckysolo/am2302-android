@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Am2032</string>
+    <string name="temp_name">Température</string>
+    <string name="hum_name">Humidité</string>
+    <string name="unknown_peripheral">Périphérique inconnue</string>
+    <string name="unknown_address">Addresse non reconnue</string>
+    <string name="no_signal">Signal non détecté</string>
+    <string name="ble_not_supported">
+        Le Blue Tooth Low Energy (BLE) n\'est pas supporté sur cet appareil!
+    </string>
+    <string name="menu_stop">Scan en cours...</string>
+    <string name="menu_scan">Détecter le capteur Bluetooth</string>
+    <string name="label_count_devices">Appareils détectés</string>
+</resources>
